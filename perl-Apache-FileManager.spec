@@ -1,6 +1,8 @@
+# TODO
+# - rename to perl-Apache-FileManager
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_with	tests	# perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Apache module: File Manager
@@ -52,14 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post
-%service apache restart
-
-%postun
-if [ "$1" = 0 ]; then
-	%service -q apache restart
-fi
 
 %files
 %defattr(644,root,root,755)
