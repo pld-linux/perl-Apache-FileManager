@@ -29,6 +29,9 @@ another server with the click of a button.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_mandir}/man3
+install blib/man3/* $RPM_BUILD_ROOT%{_mandir}/man3/Apache-FileManager.3pm
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -39,5 +42,5 @@ rm -rf $RPM_BUILD_ROOT
 %service apache restart
 
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{_pkglibdir}/*
+%doc Changes
+%{_mandir}/man3/*
