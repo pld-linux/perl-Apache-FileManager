@@ -7,6 +7,8 @@ License:	dunno
 Group:		Networking/Daemons
 Source0:	http://www.cpan.org/modules/by-module/Apache/PMC/%{name}-%{version}.tar.gz
 # Source0-md5:	c9215148e78d20b3ef9774210d08daf3
+BuildRequires:	rpmbuild(macros) >= 1.228
+Requires(post,preun):	rc-scripts
 URL:		http://freshmeat.net/projects/apache-filemanager/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,9 +24,9 @@ another server with the click of a button.
 
 %build
 %{__perl} Makefile.PL \
-        INSTALLDIRS=vendor
+	INSTALLDIRS=vendor
 %{__make} \
-        OPTIMIZE="%{rpmcflags}"
+	OPTIMIZE="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -39,8 +41,11 @@ rm -rf $RPM_BUILD_ROOT
 %service apache restart
 
 %postun
-%service apache restart
+if [ "$1" = 0 ]; then
+	%service -q apache restart
+fi
 
+%files
 %defattr(644,root,root,755)
 %doc Changes
 %{_mandir}/man3/*
