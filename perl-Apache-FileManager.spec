@@ -16,7 +16,12 @@ URL:		http://freshmeat.net/projects/apache-filemanager/
 BuildRequires:	rpmbuild(macros) >= 1.228
 Requires(post,preun):	rc-scripts
 %if %{with tests}
-BuildRequires:	todo...
+BuildRequires:	perl(Apache::Constants) >= 1.09
+BuildRequires:	perl(Apache::File) >= 1.01
+BuildRequires:	perl(Apache::Request)
+BuildRequires:	perl(Apache::Util)
+BuildRequires:	perl(File::NCopy) >= 0.32
+BuildRequires:	perl(File::Remove) >= 0.2
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
