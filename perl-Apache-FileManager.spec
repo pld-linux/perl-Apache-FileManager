@@ -5,8 +5,8 @@
 %bcond_with	tests	# perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-Summary:	Apache module: File Manager
-Summary(pl):	Modu³ Apache'a: Zarz±dca plików
+Summary:	Perl module: File Manager
+Summary(pl):	Modu³ Perla: Zarz±dca plików
 Name:		Apache-FileManager
 Version:	0.19
 Release:	0.1
@@ -34,6 +34,14 @@ provides file manipulations such as cut, copy, paste, delete, rename,
 extract archive, create directory, create file, edit file, and upload
 files. It also has the ability to rsync the server htdocs tree to
 another server with the click of a button.
+
+%description -l pl
+Modu³ Apache::FileManagerto prosty zarz±dca plików HTML. Udostêpnia
+operacje na plikach takie jak wycinanie, kopiowanie, wstawianie,
+usuwanie, zmiana nazw, rozpakowywanie archiwów, tworzenie katalogów,
+tworzenie plików, modyfikowanie plików oraz wysy³anie (upload) plików.
+Ma tak¿e mo¿liwo¶æ rsyncowania drzewa htdocs z serwera na inny serwer
+poprzez klikniêcie.
 
 %prep
 %setup -q
