@@ -1,5 +1,3 @@
-# TODO
-# - rename to perl-Apache-FileManager
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test"
