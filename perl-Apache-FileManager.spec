@@ -3,14 +3,16 @@
 %bcond_with	tests	# perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-Summary:	Perl module: File Manager
-Summary(pl):	Modu³ Perla: Zarz±dca plików
-Name:		Apache-FileManager
+%define	pdir	Apache
+%define	pnam	FileManager
+Summary:	Apache::FileManager - Apache mod_perl File Manager
+Summary(pl):	Apache::FileManager - zarz±dca plików oparty na Apache i mod_perl
+Name:		perl-Apache-FileManager
 Version:	0.19
-Release:	0.1
-License:	dunno
-Group:		Networking/Daemons
-Source0:	http://www.cpan.org/modules/by-module/Apache/PMC/%{name}-%{version}.tar.gz
+Release:	1
+License:	?
+Group:		Applications/Shells
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	c9215148e78d20b3ef9774210d08daf3
 URL:		http://freshmeat.net/projects/apache-filemanager/
 BuildRequires:	rpmbuild(macros) >= 1.228
@@ -34,7 +36,7 @@ files. It also has the ability to rsync the server htdocs tree to
 another server with the click of a button.
 
 %description -l pl
-Modu³ Apache::FileManagerto prosty zarz±dca plików HTML. Udostêpnia
+Modu³ Apache::FileManager to prosty zarz±dca plików HTML. Udostêpnia
 operacje na plikach takie jak wycinanie, kopiowanie, wstawianie,
 usuwanie, zmiana nazw, rozpakowywanie archiwów, tworzenie katalogów,
 tworzenie plików, modyfikowanie plików oraz wysy³anie (upload) plików.
@@ -42,13 +44,12 @@ Ma tak¿e mo¿liwo¶æ rsyncowania drzewa htdocs z serwera na inny serwer
 poprzez klikniêcie.
 
 %prep
-%setup -q
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
-%{__make} \
-	OPTIMIZE="%{rpmcflags}"
+%{__make}
 
 %{?with_tests:%{__make} test}
 
