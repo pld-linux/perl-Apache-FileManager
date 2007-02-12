@@ -6,7 +6,7 @@
 %define	pdir	Apache
 %define	pnam	FileManager
 Summary:	Apache::FileManager - Apache mod_perl File Manager
-Summary(pl):	Apache::FileManager - zarz±dca plików oparty na Apache i mod_perl
+Summary(pl.UTF-8):   Apache::FileManager - zarzÄ…dca plikÃ³w oparty na Apache i mod_perl
 Name:		perl-Apache-FileManager
 Version:	0.19
 Release:	1
@@ -35,13 +35,13 @@ extract archive, create directory, create file, edit file, and upload
 files. It also has the ability to rsync the server htdocs tree to
 another server with the click of a button.
 
-%description -l pl
-Modu³ Apache::FileManager to prosty zarz±dca plików HTML. Udostêpnia
+%description -l pl.UTF-8
+ModuÅ‚ Apache::FileManager to prosty zarzÄ…dca plikÃ³w HTML. UdostÄ™pnia
 operacje na plikach takie jak wycinanie, kopiowanie, wstawianie,
-usuwanie, zmiana nazw, rozpakowywanie archiwów, tworzenie katalogów,
-tworzenie plików, modyfikowanie plików oraz wysy³anie (upload) plików.
-Ma tak¿e mo¿liwo¶æ rsyncowania drzewa htdocs z serwera na inny serwer
-poprzez klikniêcie.
+usuwanie, zmiana nazw, rozpakowywanie archiwÃ³w, tworzenie katalogÃ³w,
+tworzenie plikÃ³w, modyfikowanie plikÃ³w oraz wysyÅ‚anie (upload) plikÃ³w.
+Ma takÅ¼e moÅ¼liwoÅ›Ä‡ rsyncowania drzewa htdocs z serwera na inny serwer
+poprzez klikniÄ™cie.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
