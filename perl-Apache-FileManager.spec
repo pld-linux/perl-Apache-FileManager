@@ -6,7 +6,7 @@
 %define	pdir	Apache
 %define	pnam	FileManager
 Summary:	Apache::FileManager - Apache mod_perl File Manager
-Summary(pl.UTF-8):   Apache::FileManager - zarządca plików oparty na Apache i mod_perl
+Summary(pl.UTF-8):	Apache::FileManager - zarządca plików oparty na Apache i mod_perl
 Name:		perl-Apache-FileManager
 Version:	0.19
 Release:	1
