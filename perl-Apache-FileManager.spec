@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Apache
 %define	pnam	FileManager
 Summary:	Apache::FileManager - Apache mod_perl File Manager
